@@ -5,13 +5,12 @@ using namespace std;
 
 double g = 9.8;
 double k = 0.9;
-double delta = 1.0;
-int N = 25;
+double delta = 0.01;
 double ang = 34.0;
 double v0 = 22.0;
 double v0x = v0* cos(ang*M_PI/180.0);
 double v0y = v0* sin(ang*M_PI/180.0);
-double vt=sqrt(pow(v0x,2)+pow(v0y,2));
+double vt=sqrt(v0x*v0x+v0y*v0y);
 
 double dx(double t, double y0, double y1); 
 double dx1(double t, double y0, double y1);
@@ -23,10 +22,10 @@ void rk4(double t, double h, double & y0, double & y1, double & T0, double & T1)
 int main(void)
 {
   ofstream fout("Ejercicio28.dat");
-  double y1 = 1, vex = 0, vey = 0, T1=0;
+  double y1 = 0, vex = v0x, vey = v0y, T1=0;
   double time;
-  for(time = 0; time <= 10; time += delta) {
-    fout << time << "\t" << y1 << "\t" << vey << "\t" << T1 << "\t" << vex << "\t" <<endl;
+  for(time = 0; time <= 1.9; time += delta) {
+    fout << time << "\t" << y1 << "\t" << vex << "\t" << T1 << "\t" << vey << "\t" <<endl;
     rk4(time, delta, y1, vex, T1, vey);
   }
   fout.close();
