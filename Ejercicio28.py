@@ -6,9 +6,9 @@ plt.figure(1)
 
 data = np.loadtxt("Ejercicio28.dat")
 
-plt.plot(data[:401,0], data[:401,1])
+plt.plot(data[:,0], data[:,3])
 
 plt.axis('square')
 plt.xlabel('X')
 plt.ylabel('Y')
-plt.savefig("Ejer.png")
+plt.savefig("Ejercicio28.png")

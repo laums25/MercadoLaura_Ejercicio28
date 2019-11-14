@@ -5,7 +5,7 @@ using namespace std;
 
 double g = 9.8;
 double k = 0.9;
-double delta = 0.01;
+double delta = 1.0;
 int N = 25;
 double ang = 34.0;
 double v0 = 22.0;
@@ -22,7 +22,7 @@ void rk4(double t, double h, double & y0, double & y1, double & T0, double & T1)
 
 int main(void)
 {
-  ofstream fout("datos-array.txt");
+  ofstream fout("Ejercicio28.dat");
   double y1 = 1, vex = 0, vey = 0, T1=0;
   double time;
   for(time = 0; time <= 10; time += delta) {
