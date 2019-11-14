@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 
 plt.figure(1)
 
-data = np.loadtxt("Ejer.dat")
+data = np.loadtxt("Ejercicio28.dat")
 
 plt.plot(data[:401,0], data[:401,1])
 

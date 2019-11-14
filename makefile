@@ -1,8 +1,8 @@
-Ejer.png : Ejer.dat Ejercicio28.py
+Ejer.png : Ejercicio28.dat Ejercicio28.py
 	python Ejercicio28.py
 
 
-Ejer.dat  : Ejer.x
+Ejercicio28.dat  : Ejer.x
 	./Ejer.x 
 
 
