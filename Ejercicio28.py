@@ -7,6 +7,7 @@ plt.figure(1)
 data = np.loadtxt("Ejercicio28.dat")
 
 plt.plot(data[:,1], data[:,3])
+plt.plot(data[:,5], data[:,6])
 
 plt.axis('square')
 plt.xlabel('X')

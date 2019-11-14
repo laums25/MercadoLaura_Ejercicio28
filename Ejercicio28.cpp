@@ -6,7 +6,7 @@ using namespace std;
 double g = 9.8;
 double k = 0.9;
 double delta = 0.01;
-double ang = 34.0;
+double ang = 45.0;
 double v0 = 22.0;
 double v0x = v0* cos(ang*M_PI/180.0);
 double v0y = v0* sin(ang*M_PI/180.0);
@@ -22,10 +22,10 @@ void rk4(double t, double h, double & y0, double & y1, double & T0, double & T1)
 int main(void)
 {
   ofstream fout("Ejercicio28.dat");
-  double y1 = 0, vex = v0x, vey = v0y, T1=0;
+  double y1 = 0, vex = v0x, vey = v0y, T1=0, y0=0, T0=0;
   double time;
   for(time = 0; time <= 1.9; time += delta) {
-    fout << time << "\t" << y1 << "\t" << vex << "\t" << T1 << "\t" << vey << "\t" <<endl;
+    fout << time << "\t" << y1 << "\t" << vex << "\t" << T1 << "\t" << vey << "\t" << y0 << "\t" <<  T0 << "\t" <<endl;
     rk4(time, delta, y1, vex, T1, vey);
   }
   fout.close();
